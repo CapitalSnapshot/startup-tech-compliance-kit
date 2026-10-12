@@ -1,0 +1,90 @@
+{
+ "note": "Places that may use a prohibited phrase, each with a reason. scripts/check_claims.py fails on any other use, and on an entry that no longer matches. Do not add an entry to hide a real claim: reword it.",
+ "allow": [
+  {
+   "file": "CHANGELOG.md",
+   "phrase": "*",
+   "reason": "describes the wording guard and the phrases it removed"
+  },
+  {
+   "file": "README.md",
+   "phrase": "compliant",
+   "reason": "negation: a passing control set does not make you compliant"
+  },
+  {
+   "file": "START.md",
+   "phrase": "compliant",
+   "reason": "negation: passing the kit does not make you compliant"
+  },
+  {
+   "file": "audit/tests/test_coverage.py",
+   "phrase": "*",
+   "reason": "test that checks the wording guard; it must contain the phrases"
+  },
+  {
+   "file": "audit/tests/test_mappings.py",
+   "phrase": "*",
+   "reason": "test that checks the wording guard; it must contain the phrases"
+  },
+  {
+   "file": "audit/tests/test_status_wording.py",
+   "phrase": "*",
+   "reason": "test that checks the wording guard; it must contain the phrases"
+  },
+  {
+   "file": "guide/maturity-model.md",
+   "phrase": "assured",
+   "reason": "negation, and 'Assured' is the name of maturity level 4, which needs an independent assessment"
+  },
+  {
+   "file": "guide/maturity-model.md",
+   "phrase": "compliant",
+   "reason": "negation, and 'Assured' is the name of maturity level 4, which needs an independent assessment"
+  },
+  {
+   "file": "guide/paths/iso27001.md",
+   "phrase": "certified",
+   "reason": "negation: implementing an ISMS is not the same as being certified"
+  },
+  {
+   "file": "guide/paths/soc2.md",
+   "phrase": "certified",
+   "reason": "negation: you do not get certified; 'we passed the audit' listed as a common mistake"
+  },
+  {
+   "file": "guide/paths/soc2.md",
+   "phrase": "passed the audit",
+   "reason": "negation: you do not get certified; 'we passed the audit' listed as a common mistake"
+  },
+  {
+   "file": "scoping/gap-assessment.md",
+   "phrase": "assured",
+   "reason": "'Assured' is the name of maturity level 4"
+  },
+  {
+   "file": "scripts/prohibited_phrases.json",
+   "phrase": "*",
+   "reason": "the phrase list itself"
+  },
+  {
+   "file": "skills/production-migration/SKILL.md",
+   "phrase": "compliant",
+   "reason": "negation: following it does not make a company compliant"
+  },
+  {
+   "file": "skills/production-migration/references/README.md",
+   "phrase": "compliant",
+   "reason": "negation: following it does not make you compliant"
+  },
+  {
+   "file": "audit/tests/test_claims.py",
+   "phrase": "*",
+   "reason": "test that checks the claims check; it must contain the phrases"
+  },
+  {
+   "file": "scripts/claims_allowlist.json",
+   "phrase": "*",
+   "reason": "this list: it names the phrases it allows"
+  }
+ ]
+}

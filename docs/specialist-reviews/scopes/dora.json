@@ -1,0 +1,40 @@
+{
+  "scope_id": "dora-v1",
+  "title": "DORA module",
+  "status": "proposed",
+  "reviewer_role": null,
+  "review_date": null,
+  "source_editions": [
+    "Regulation (EU) 2022/2554 (DORA), Publications Office English text"
+  ],
+  "records": [
+    "KIT-ACC-01.DORA.1",
+    "KIT-SEC-01.DORA.1",
+    "KIT-CHG-01.DORA.1",
+    "KIT-ENV-01.DORA.1",
+    "KIT-BKP-01.DORA.1",
+    "KIT-BKP-01.DORA.2",
+    "KIT-BKP-01.DORA.3",
+    "KIT-LOG-01.DORA.1",
+    "KIT-VND-01.DORA.1",
+    "KIT-VND-01.DORA.2",
+    "KIT-PRV-01.DORA.1",
+    "KIT-INC-01.DORA.1",
+    "KIT-INC-01.DORA.2",
+    "KIT-SCM-01.DORA.1",
+    "KIT-VUL-01.DORA.1",
+    "KIT-GOV-01.DORA.1"
+  ],
+  "documents": [
+    "scoping/dora-screening.md"
+  ],
+  "exclusions": [
+    "The regulatory technical standards and implementing technical standards made under DORA, unless the reviewer chooses to add them and records that",
+    "National supervisory practice and national law for any Member State",
+    "Any statement that a particular organisation is or is not a financial entity, an ICT third-party service provider or a critical provider",
+    "The other frameworks in the kit",
+    "The DORA row of scoping/applicability-matrix.md, which is read for context only"
+  ],
+  "limitations": null,
+  "decisions": {}
+}

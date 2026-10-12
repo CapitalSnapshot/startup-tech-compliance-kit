@@ -1,0 +1,36 @@
+{
+  "scope_id": "soc2-v1",
+  "title": "SOC 2 mappings",
+  "status": "proposed",
+  "reviewer_role": null,
+  "review_date": null,
+  "source_editions": [
+    "2017 Trust Services Criteria (With Revised Points of Focus - 2022), AICPA, dated 30 September 2023"
+  ],
+  "records": [
+    "KIT-ACC-01.SOC2.1",
+    "KIT-SEC-01.SOC2.1",
+    "KIT-CHG-01.SOC2.1",
+    "KIT-ENV-01.SOC2.1",
+    "KIT-BKP-01.SOC2.1",
+    "KIT-LOG-01.SOC2.1",
+    "KIT-VND-01.SOC2.1",
+    "KIT-PRV-01.SOC2.1",
+    "KIT-INC-01.SOC2.1",
+    "KIT-SCM-01.SOC2.1",
+    "KIT-VUL-01.SOC2.1",
+    "KIT-GOV-01.SOC2.1"
+  ],
+  "documents": [
+    "guide/paths/soc2.md"
+  ],
+  "exclusions": [
+    "Any examination, report type choice or opinion",
+    "The description criteria and the content of a system description",
+    "Whether any organisation would pass an examination",
+    "The other frameworks in the kit",
+    "Criteria text: the kit cites identifiers only, and the reviewer should not paste criteria text into the review"
+  ],
+  "limitations": null,
+  "decisions": {}
+}

@@ -1,0 +1,58 @@
+{
+  "scope_id": "gdpr-privacy-v1",
+  "title": "GDPR and privacy content",
+  "status": "proposed",
+  "reviewer_role": null,
+  "review_date": null,
+  "source_editions": [
+    "Regulation (EU) 2016/679 (GDPR), Publications Office English text",
+    "Commission Implementing Decision (EU) 2021/914 (standard contractual clauses), for the transfer records only"
+  ],
+  "records": [
+    "KIT-ACC-01.GDPR.1",
+    "KIT-SEC-01.GDPR.1",
+    "KIT-CHG-01.GDPR.1",
+    "KIT-ENV-01.GDPR.1",
+    "KIT-BKP-01.GDPR.1",
+    "KIT-LOG-01.GDPR.1",
+    "KIT-VND-01.GDPR.1",
+    "KIT-VND-01.GDPR.2",
+    "KIT-PRV-01.GDPR.1",
+    "KIT-PRV-01.GDPR.2",
+    "KIT-PRV-01.GDPR.3",
+    "KIT-PRV-01.GDPR.4",
+    "KIT-PRV-01.GDPR.5",
+    "KIT-PRV-01.GDPR.6",
+    "KIT-PRV-01.GDPR.7",
+    "KIT-INC-01.GDPR.1",
+    "KIT-SCM-01.GDPR.1",
+    "KIT-VUL-01.GDPR.1",
+    "KIT-GOV-01.GDPR.1"
+  ],
+  "documents": [
+    "privacy/README.md",
+    "privacy/accountability.md",
+    "privacy/data-inventory.md",
+    "privacy/data-subject-requests.md",
+    "privacy/dpia-screening.md",
+    "privacy/dpo-screening.md",
+    "privacy/international-transfers.md",
+    "privacy/international-transfers-example.md",
+    "privacy/privacy-by-design-review.md",
+    "privacy/record-of-processing.md",
+    "privacy/retention-and-deletion.md",
+    "scoping/gdpr-territorial-scope.md",
+    "scripts/dpia_screen.py",
+    "runbooks/incident-response.md",
+    "runbooks/tabletop-incident-notification.md"
+  ],
+  "exclusions": [
+    "The kit's other frameworks (SOC 2, ISO/IEC 27001, DORA, NIS2)",
+    "Law of any single Member State, including national supplements to the GDPR",
+    "Any statement that a particular organisation complies with the GDPR",
+    "Supervisory authority and EDPB guidance not named in the sources list, unless the reviewer chooses to add it and records that",
+    "The fictional example in privacy/international-transfers-example.md as a model of any real arrangement (reviewed for form only)"
+  ],
+  "limitations": null,
+  "decisions": {}
+}

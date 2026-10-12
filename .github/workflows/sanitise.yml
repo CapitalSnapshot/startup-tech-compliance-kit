@@ -1,0 +1,48 @@
+name: Checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  sanitise:
+    name: Sanitise check
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for identifiers, credentials and files that must not be committed
+        env:
+          DENYLIST: ${{ secrets.DENYLIST }}
+        run: python3 -I scripts/sanitise_check.py .
+  tests:
+    name: Audit tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run every test
+        run: python3 -I -m unittest discover -s audit/tests -p "test_*.py" -v
+      - name: Check the generated control index is current
+        run: python3 -I scripts/controls_index.py --check
+      - name: Validate the framework mappings and check the generated page is current
+        run: python3 -I scripts/validate_mappings.py --check
+      - name: Check the generated coverage reports are current
+        run: python3 -I scripts/coverage_reports.py --check
+      - name: Check the source watch list against the mappings and that its page is current
+        run: python3 -I scripts/source_impact.py check
+      - name: Check for prohibited compliance and certification claims
+        run: python3 -I scripts/check_claims.py
+  python-versions:
+    name: Python compatibility
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run every test on this Python
+        run: python -I -m unittest discover -s audit/tests -p "test_*.py"

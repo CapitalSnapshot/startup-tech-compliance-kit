@@ -1,0 +1,37 @@
+{
+  "scope_id": "iso27001-v1",
+  "title": "ISO/IEC 27001:2022 mappings",
+  "status": "proposed",
+  "reviewer_role": null,
+  "review_date": null,
+  "source_editions": [
+    "ISO/IEC 27001:2022 (clauses 4 to 10 and Annex A control identifiers and titles)"
+  ],
+  "records": [
+    "KIT-ACC-01.ISO27001.1",
+    "KIT-SEC-01.ISO27001.1",
+    "KIT-CHG-01.ISO27001.1",
+    "KIT-ENV-01.ISO27001.1",
+    "KIT-BKP-01.ISO27001.1",
+    "KIT-LOG-01.ISO27001.1",
+    "KIT-VND-01.ISO27001.1",
+    "KIT-PRV-01.ISO27001.1",
+    "KIT-INC-01.ISO27001.1",
+    "KIT-SCM-01.ISO27001.1",
+    "KIT-VUL-01.ISO27001.1",
+    "KIT-GOV-01.ISO27001.1",
+    "KIT-GOV-01.ISO27001.2"
+  ],
+  "documents": [
+    "guide/paths/iso27001.md"
+  ],
+  "exclusions": [
+    "Any certification, certification body choice or audit outcome",
+    "ISO/IEC 27002 guidance text and ISO/IEC 27701",
+    "The other frameworks in the kit",
+    "Whether any organisation's ISMS meets the standard",
+    "Standard text: the kit cites identifiers and titles only, and the reviewer should not paste standard text into the review"
+  ],
+  "limitations": null,
+  "decisions": {}
+}

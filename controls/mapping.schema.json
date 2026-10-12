@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "controls/mapping.schema.json",
+  "title": "Framework mapping record",
+  "description": "One mapping between a kit control and one framework requirement. Cross-field rules (placeholders, review metadata, statuses) are enforced by scripts/validate_mappings.py in addition to this schema. A value starting with \"<pending\" is an explicit placeholder: the record is reported as incomplete.",
+  "type": "object",
+  "required": ["id", "control_id", "framework", "edition", "source_reference", "source_url", "mapping_rationale",
+               "requirements_covered", "exclusions", "dependencies", "coverage_status", "limitations", "review", "change_reference"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^KIT-[A-Z]{3}-[0-9]{2}\\.(SOC2|ISO27001|GDPR|DORA)\\.[0-9]+$"},
+    "control_id": {"type": "string", "pattern": "^KIT-[A-Z]{3}-[0-9]{2}$"},
+    "framework": {"type": "string", "enum": ["SOC 2", "ISO/IEC 27001", "GDPR", "DORA"]},
+    "edition": {"type": "string", "minLength": 1},
+    "source_reference": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "source_url": {"type": "string", "pattern": "^(https://|<pending)"},
+    "mapping_rationale": {"type": "string", "minLength": 1},
+    "requirements_covered": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "exclusions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "dependencies": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "coverage_status": {"type": "string", "enum": ["covered", "covered in part", "not covered", "not applicable", "not assessed", "needs expert review"]},
+    "limitations": {"type": "string", "minLength": 1},
+    "obligation_type": {"type": "array", "minItems": 1, "items": {"type": "string", "enum": ["direct statutory duty", "contractual flow-down", "oversight obligation"]}},
+    "obligation_detail": {"type": "string", "minLength": 1},
+    "review": {
+      "type": "object",
+      "required": ["label", "reviewer_role", "review_date", "decision", "rationale", "next_review_trigger"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {"type": "string", "enum": ["community draft", "maintainer reviewed", "specialist reviewed"]},
+        "reviewer_role": {"type": ["string", "null"]},
+        "review_date": {"type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        "decision": {"type": ["string", "null"]},
+        "rationale": {"type": ["string", "null"]},
+        "next_review_trigger": {"type": "string", "minLength": 1}
+      }
+    },
+    "change_reference": {"type": "string", "minLength": 1}
+  }
+}

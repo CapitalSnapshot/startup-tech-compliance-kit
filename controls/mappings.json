@@ -1,0 +1,2116 @@
+{
+  "note": "Source of truth for the framework mappings. Validated by scripts/validate_mappings.py against controls/mapping.schema.json; controls/framework-mappings.md is generated from this file. Do not edit the Markdown by hand.",
+  "data_date": "2026-10-09",
+  "records": [
+    {
+      "id": "KIT-ACC-01.SOC2.1",
+      "control_id": "KIT-ACC-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC6.1 to CC6.3"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Logical access restrictions, provisioning and removal",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Named accounts, enforced MFA, role-based cloud access with separate production and non-production roles, least privilege, removal on leaving, and a regular access review"
+      ],
+      "exclusions": [
+        "Defined access request and approval, periodic review, evidence over the whole period",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-ACC-01.ISO27001.1",
+      "control_id": "KIT-ACC-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.5.15",
+        "Annex A control A.5.18",
+        "Annex A control A.8.2",
+        "Annex A control A.8.5"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Access control, access rights, privileged access, secure authentication",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Named accounts, enforced MFA, role-based cloud access with separate production and non-production roles, least privilege, removal on leaving, and a regular access review"
+      ],
+      "exclusions": [
+        "An access control policy, a Statement of Applicability entry, risk treatment, internal audit",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-ACC-01.GDPR.1",
+      "control_id": "KIT-ACC-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 32(1)",
+        "Art. 32(4)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 32(1) requires the controller and the processor to implement technical and organisational measures appropriate to the risk, including the ability to ensure ongoing confidentiality, integrity, availability and resilience of processing systems (point (b)). Art. 32(4) requires steps to ensure that people acting under their authority who have access to personal data process it only on instructions. Controlling who can reach personal data is one such measure.",
+      "requirements_covered": [
+        "Limiting access to systems that hold personal data to named, authorised people (supports Art. 32(1)(b), confidentiality)",
+        "Removing access promptly when people leave, and reviewing access (supports Art. 32(4))"
+      ],
+      "exclusions": [
+        "Choosing the level of security appropriate to the risk (the opening words of Art. 32(1)): the kit gives no risk assessment for the user's processing",
+        "Pseudonymisation and encryption (Art. 32(1)(a)) are addressed by other controls",
+        "Instructing staff and contractors to process personal data only on instructions (Art. 32(4)) is not templated"
+      ],
+      "dependencies": [
+        "KIT-GOV-01 (roles, risk assessment, policies)",
+        "KIT-PRV-01 (knowing what personal data is held)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 32 is risk-based: whether a measure is appropriate depends on the processing, so this mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-ACC-01.DORA.1",
+      "control_id": "KIT-ACC-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(4)(c)",
+        "Art. 9(4)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9(4)(c) requires financial entities to implement policies that limit physical or logical access to information and ICT assets to what is required for legitimate and approved functions, with policies, procedures and controls on access rights and their sound administration. Art. 9(4)(d) requires policies and protocols for strong authentication mechanisms and for protection of cryptographic keys.",
+      "requirements_covered": [
+        "Least-privilege logical access, role-based access, enforced MFA and an access review (supports Art. 9(4)(c) and the authentication part of Art. 9(4)(d))"
+      ],
+      "exclusions": [
+        "Physical access is not covered",
+        "The documented policy set, and the 'relevant standards and dedicated control systems' for strong authentication, are not specified",
+        "Protection of cryptographic keys is addressed in KIT-SEC-01"
+      ],
+      "dependencies": [
+        "KIT-GOV-01 (policies)",
+        "KIT-SEC-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 9(1) to 9(4)(f) were read; the text after the change-management sentence of Art. 9(4) was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-SEC-01.SOC2.1",
+      "control_id": "KIT-SEC-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC6.1",
+        "CC6.7"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Protecting credentials and restricting movement of information",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Secrets kept in a secrets manager and out of code, a register (name, owner, last four, expiry), expiring credentials where possible, secret scanning, and rotation on exposure"
+      ],
+      "exclusions": [
+        "Policies, key and credential lifecycle evidence, incident handling for exposure",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-SEC-01.ISO27001.1",
+      "control_id": "KIT-SEC-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.5.17",
+        "Annex A control A.8.24",
+        "Annex A control A.8.4"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Authentication information, use of cryptography, access to source code",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Secrets kept in a secrets manager and out of code, a register (name, owner, last four, expiry), expiring credentials where possible, secret scanning, and rotation on exposure"
+      ],
+      "exclusions": [
+        "Cryptography and key management policy; selected and justified in the Statement of Applicability",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-SEC-01.GDPR.1",
+      "control_id": "KIT-SEC-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 32(1)(a)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 32(1)(a) names pseudonymisation and encryption of personal data among the measures to consider, as appropriate. Encryption is only as strong as the handling of keys and credentials, which this control addresses.",
+      "requirements_covered": [
+        "Keeping keys and credentials out of code and in a secrets manager, with an owner and rotation (supports effective encryption)"
+      ],
+      "exclusions": [
+        "Deciding which personal data to encrypt or pseudonymise, and how, is not decided by this control (see the encryption and key management policy template)",
+        "Pseudonymisation is not covered"
+      ],
+      "dependencies": [
+        "policies/encryption-and-key-management.md",
+        "KIT-PRV-01 (data inventory)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 32(1)(a) is a measure to consider as appropriate, not an absolute duty to encrypt everything. Art. 32 is risk-based: whether a measure is appropriate depends on the processing, so this mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-SEC-01.DORA.1",
+      "control_id": "KIT-SEC-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(2)",
+        "Art. 9(4)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9(2) requires ICT security policies, procedures, protocols and tools that maintain high standards of availability, authenticity, integrity and confidentiality of data at rest, in use or in transit. Art. 9(4)(d) requires protection of cryptographic keys where data is encrypted based on data classification and ICT risk assessment.",
+      "requirements_covered": [
+        "Keeping credentials and keys out of code, in a secrets manager, with ownership and rotation (supports protection of keys)"
+      ],
+      "exclusions": [
+        "Which data is encrypted, based on classification and risk assessment, is not decided here (see the encryption and key management policy template)",
+        "Key management beyond secrets handling is not covered"
+      ],
+      "dependencies": [
+        "policies/encryption-and-key-management.md",
+        "policies/data-classification-and-handling.md"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 9(1) to 9(4)(f) were read; the text after the change-management sentence of Art. 9(4) was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-CHG-01.SOC2.1",
+      "control_id": "KIT-CHG-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC8.1"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Authorised, tested, approved changes",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Protected branches, pull requests with named required checks and an independent reviewer, deploys only from the pipeline, a record of each production change, and emergency changes through the same path"
+      ],
+      "exclusions": [
+        "Change management policy, sampled changes across the period, emergency change handling",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-CHG-01.ISO27001.1",
+      "control_id": "KIT-CHG-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.8.32",
+        "Annex A control A.8.25",
+        "Annex A control A.8.31"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Change management, secure development life cycle, environment separation",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Protected branches, pull requests with named required checks and an independent reviewer, deploys only from the pipeline, a record of each production change, and emergency changes through the same path"
+      ],
+      "exclusions": [
+        "Secure development policy, risk treatment, internal audit",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-CHG-01.GDPR.1",
+      "control_id": "KIT-CHG-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 25(1)",
+        "Art. 32(1)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 25(1) requires measures designed to implement the data protection principles effectively, both when the means of processing are determined and during the processing itself. Art. 32(1)(d) asks for a process for regularly testing, assessing and evaluating the effectiveness of security measures. Controlled, reviewed change is where design decisions are made and tested.",
+      "requirements_covered": [
+        "Reviewed, tested and recorded changes before they reach production (supports the 'time of the processing' limb of Art. 25(1) and the testing in Art. 32(1)(d))"
+      ],
+      "exclusions": [
+        "The data protection by design measures themselves (for example minimisation and pseudonymisation) are not specified by change control; see the privacy by design review template",
+        "Regular testing of security measures other than changes is addressed in KIT-VUL-01 and KIT-BKP-01"
+      ],
+      "dependencies": [
+        "KIT-PRV-01 (privacy by design review)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 25 depends on the state of the art, cost and risk. This mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-CHG-01.DORA.1",
+      "control_id": "KIT-CHG-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(4)(e)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9(4)(e) requires documented policies, procedures and controls for ICT change management, including changes to software, hardware, firmware components, systems or security parameters, based on a risk assessment approach, so that all changes are recorded, tested, assessed, approved, implemented and verified in a controlled manner.",
+      "requirements_covered": [
+        "Protected branches, required checks, independent review, pipeline-only deploys and a record of each production change (recorded, tested, approved, verified)"
+      ],
+      "exclusions": [
+        "Hardware, firmware and security parameter changes outside code are not specifically addressed",
+        "A risk assessment approach to changes is not specified",
+        "The remaining text of Art. 9(4)(e) was not read"
+      ],
+      "dependencies": [
+        "KIT-GOV-01 (policies)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 9(1) to 9(4)(f) were read; the text after the change-management sentence of Art. 9(4) was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-ENV-01.SOC2.1",
+      "control_id": "KIT-ENV-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC6.1",
+        "CC6.6",
+        "CC8.1"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Boundaries, access from outside, controlled change",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Separate development, demo and production environments, production data never copied downhill, separate database users for the application and for migrations, one artefact promoted through environments"
+      ],
+      "exclusions": [
+        "Network and segmentation evidence, data handling rules",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-ENV-01.ISO27001.1",
+      "control_id": "KIT-ENV-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.8.31",
+        "Annex A control A.8.33",
+        "Annex A control A.8.22"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Separation of environments, test information, network segregation",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Separate development, demo and production environments, production data never copied downhill, separate database users for the application and for migrations, one artefact promoted through environments"
+      ],
+      "exclusions": [
+        "A documented rule that production data is not used in test, and its enforcement",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-ENV-01.GDPR.1",
+      "control_id": "KIT-ENV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 25(2)",
+        "Art. 32(1)(b)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 25(2) requires measures ensuring that, by default, only the personal data necessary for each specific purpose is processed, including as to accessibility. Keeping real personal data out of development and demo environments limits how much of it is processed and who can reach it. Separating environments also supports the confidentiality and integrity of processing systems (Art. 32(1)(b)).",
+      "requirements_covered": [
+        "No production personal data outside production",
+        "Separate credentials and access per environment"
+      ],
+      "exclusions": [
+        "Product defaults (what is collected and who can see it by default) are not covered",
+        "Art. 25(2) also concerns the extent of processing and the period of storage by default; those are covered in the privacy process, not by environment separation"
+      ],
+      "dependencies": [
+        "KIT-PRV-01 (data inventory, minimisation and retention)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 25 depends on the state of the art, cost and risk. This mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-ENV-01.DORA.1",
+      "control_id": "KIT-ENV-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(4)(b)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9(4)(b) requires, following a risk-based approach, a sound network and infrastructure management structure that may include automated mechanisms to isolate affected information assets in the event of cyber-attacks, with network connections designed so that they can be instantaneously severed or segmented to prevent contagion.",
+      "requirements_covered": [
+        "Separating development, demo and production and limiting how production is reached (supports isolation and segmentation)"
+      ],
+      "exclusions": [
+        "Automated mechanisms to isolate affected assets during an attack are not covered",
+        "Designing network connections that can be instantaneously severed or segmented is not covered"
+      ],
+      "dependencies": [
+        "KIT-LOG-01",
+        "KIT-INC-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 9(1) to 9(4)(f) were read; the text after the change-management sentence of Art. 9(4) was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-BKP-01.SOC2.1",
+      "control_id": "KIT-BKP-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "A1.2",
+        "A1.3"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Backup and recovery infrastructure; testing recovery plans",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Automated encrypted backups with point-in-time recovery, disk snapshots, object versioning, backups the host cannot delete, scheduled restore tests into a scratch environment with comparison and timing, and recovery objectives taken from measured restores"
+      ],
+      "exclusions": [
+        "Only if the Availability category is in scope; recovery objectives tied to commitments",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-BKP-01.ISO27001.1",
+      "control_id": "KIT-BKP-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.8.13",
+        "Annex A control A.8.14",
+        "Annex A control A.5.30"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Information backup, redundancy, ICT readiness for continuity",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Automated encrypted backups with point-in-time recovery, disk snapshots, object versioning, backups the host cannot delete, scheduled restore tests into a scratch environment with comparison and timing, and recovery objectives taken from measured restores"
+      ],
+      "exclusions": [
+        "A continuity plan, objectives from business impact, tests recorded",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-BKP-01.GDPR.1",
+      "control_id": "KIT-BKP-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 32(1)(c)",
+        "Art. 32(1)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 32(1)(c) asks for the ability to restore the availability of, and access to, personal data in a timely manner after a physical or technical incident. Art. 32(1)(d) asks for a process for regularly testing, assessing and evaluating the effectiveness of security measures. A scheduled restore test is both a check of the recovery capability and such a test.",
+      "requirements_covered": [
+        "Backups, snapshots and versioning that allow personal data to be restored",
+        "A scheduled restore test with measured timings, which tests the effectiveness of the backup measure"
+      ],
+      "exclusions": [
+        "'Timely' is judged against the organisation's own needs: the kit measures recovery time but does not set the requirement",
+        "Recovery from incidents other than data loss (for example loss of a whole region or account) is only partly covered",
+        "Testing the effectiveness of security measures other than backups is covered in other controls"
+      ],
+      "dependencies": [
+        "KIT-GOV-01 (recovery objectives set by the business)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 32 is risk-based: whether a measure is appropriate depends on the processing, so this mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-BKP-01.DORA.1",
+      "control_id": "KIT-BKP-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 12(1)",
+        "Art. 12(2)",
+        "Art. 12(3)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 12(1) requires documented backup policies and procedures specifying data scope and minimum frequency, and restoration and recovery procedures and methods. Art. 12(2) requires backup systems that can be activated without jeopardising security and requires periodic testing of backup and restoration procedures. Art. 12(3) requires restoration using systems physically and logically segregated from the source and securely protected.",
+      "requirements_covered": [
+        "Automated backups, restoration into a scratch environment, comparison and timing, and periodic restore tests (Art. 12(2) periodic testing)",
+        "Restoring into an environment separate from the source (supports Art. 12(3))"
+      ],
+      "exclusions": [
+        "Documented backup policies specifying data scope and minimum frequency by criticality or confidentiality (Art. 12(1)(a)) are not templated",
+        "Redundant ICT capacities (Art. 12(4)) are not covered",
+        "Requirements specific to central counterparties, central securities depositories and data reporting service providers are not covered"
+      ],
+      "dependencies": [
+        "KIT-GOV-01 (recovery objectives)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 12(1) to (5) were read in part (to the start of paragraph 5).",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-BKP-01.DORA.2",
+      "control_id": "KIT-BKP-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 11(1)",
+        "Art. 11(2)",
+        "Art. 11(4)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 11(1) requires a comprehensive ICT business continuity policy. Art. 11(2) requires arrangements, plans, procedures and mechanisms to ensure continuity of critical or important functions and to respond to and resolve incidents. Art. 11(4) requires ICT business continuity plans to be put in place, maintained and periodically tested.",
+      "requirements_covered": [
+        "A business continuity and disaster recovery policy template and a rebuild-from-nothing runbook, with scheduled restore tests"
+      ],
+      "exclusions": [
+        "Independent internal audit review of response and recovery plans (Art. 11(3)) is not covered",
+        "A business impact analysis (Art. 11(5)) is not covered",
+        "Crisis communication and reporting actions (Art. 11(2)(e)) are not covered"
+      ],
+      "dependencies": [
+        "KIT-GOV-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 11(1) to (5) were read in part.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-BKP-01.DORA.3",
+      "control_id": "KIT-BKP-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 30(2)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 30(2)(d) requires contractual arrangements to include provisions on access, recovery and return, in an easily accessible format, of personal and non-personal data processed by the financial entity, on insolvency, resolution or discontinuation of the provider's business or on termination of the arrangement. The kit gives no guidance for a provider on returning a customer's data or on this contract term.",
+      "requirements_covered": [
+        "None identified: the kit has no provider-side guidance on data return"
+      ],
+      "exclusions": [
+        "Provider-side export, return of data and termination assistance are not covered",
+        "Contract wording is not provided"
+      ],
+      "dependencies": [
+        "Legal advice on the customer contract"
+      ],
+      "coverage_status": "not covered",
+      "limitations": "This is a term a customer's contract may require of a provider; it is not a direct duty on the provider under Art. 30.",
+      "obligation_type": [
+        "contractual flow-down"
+      ],
+      "obligation_detail": "contractual flow-down (a term a financial-entity customer may require)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-LOG-01.SOC2.1",
+      "control_id": "KIT-LOG-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC7.1",
+        "CC7.2"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Detection and monitoring of anomalies and security events",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Logging of authentication, administrative, data access and deploy events to an off-host store with stated retention, alerts with named recipients, and the cloud audit trail switched on"
+      ],
+      "exclusions": [
+        "Defined monitoring scope, review evidence, alert response records",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-LOG-01.ISO27001.1",
+      "control_id": "KIT-LOG-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.8.15",
+        "Annex A control A.8.16",
+        "Annex A control A.8.17"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Logging, monitoring activities, clock synchronisation",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Logging of authentication, administrative, data access and deploy events to an off-host store with stated retention, alerts with named recipients, and the cloud audit trail switched on"
+      ],
+      "exclusions": [
+        "Log retention and protection rules, review procedure",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-LOG-01.GDPR.1",
+      "control_id": "KIT-LOG-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 32(1)(b)",
+        "Art. 33(1)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Logging and monitoring help ensure ongoing confidentiality, integrity and availability of processing systems (Art. 32(1)(b)) and help the controller become aware of a personal data breach, which is the point from which the Art. 33(1) notification period runs.",
+      "requirements_covered": [
+        "Logging authentication, administrative and data access events off-host, with alerts to named recipients (supports detection and awareness)"
+      ],
+      "exclusions": [
+        "The Art. 33 duties themselves are mapped under KIT-INC-01",
+        "Log content that is itself personal data needs minimisation and retention rules, which this control does not provide"
+      ],
+      "dependencies": [
+        "KIT-INC-01 (what happens once an incident is detected)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Detection is practice rather than a named requirement of Art. 32 or 33. This mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-LOG-01.DORA.1",
+      "control_id": "KIT-LOG-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 10(1)",
+        "Art. 10(2)",
+        "Art. 10(3)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 10(1) requires mechanisms to promptly detect anomalous activities, including ICT network performance issues and incidents, and to identify potential material single points of failure, with detection mechanisms regularly tested. Art. 10(2) requires multiple layers of control, alert thresholds and criteria, and automatic alerts for relevant staff. Art. 10(3) requires sufficient resources and capabilities to monitor user activity and anomalies.",
+      "requirements_covered": [
+        "Logging of authentication, administrative and data access events off-host, with alerts to named recipients (supports detection and alerting)"
+      ],
+      "exclusions": [
+        "Regular testing of detection mechanisms (Art. 10(1) refers to Art. 25) is not covered",
+        "Multiple layers of control and defined alert thresholds (Art. 10(2)) are only partly specified",
+        "Identifying material single points of failure is not covered",
+        "Sufficient resources and capabilities (Art. 10(3)) are a management decision"
+      ],
+      "dependencies": [
+        "KIT-INC-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 10(1) to (3) were read.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-VND-01.SOC2.1",
+      "control_id": "KIT-VND-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC9.2"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Vendor and business partner risk",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): A register of every third party that receives data, classification, yearly review of critical vendors, exit notes, vendor credentials tracked in the secrets register, and disclosure of sub-processors"
+      ],
+      "exclusions": [
+        "Vendor risk assessment criteria, evidence of reviews, complementary user-entity controls",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-VND-01.ISO27001.1",
+      "control_id": "KIT-VND-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.5.19 to A.5.22"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Supplier relationships, agreements, supply chain, monitoring",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): A register of every third party that receives data, classification, yearly review of critical vendors, exit notes, vendor credentials tracked in the secrets register, and disclosure of sub-processors"
+      ],
+      "exclusions": [
+        "Supplier policy, agreements, a review process",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-VND-01.GDPR.1",
+      "control_id": "KIT-VND-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 28(1)",
+        "Art. 28(2)",
+        "Art. 28(3)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 28(1) requires a controller to use only processors providing sufficient guarantees. Art. 28(2) requires prior specific or general written authorisation before a processor engages another processor. Art. 28(3) requires processing by a processor to be governed by a contract with specified content, including processing only on documented instructions, confidentiality, the Art. 32 measures, conditions for sub-processors, assistance, and deletion or return of data. A vendor register and signed agreements are the evidence.",
+      "requirements_covered": [
+        "Knowing every processor and sub-processor and whether an agreement is in place",
+        "Reviewing critical vendors and recording exit paths"
+      ],
+      "exclusions": [
+        "The terms required by Art. 28(3) are not provided: the kit supplies no data processing agreement template",
+        "Sub-processor authorisation (Art. 28(2)) is mentioned, not templated",
+        "Where the organisation is itself a processor, its Art. 28(3) duties to its customers are not covered here"
+      ],
+      "dependencies": [
+        "KIT-PRV-01 (which processing involves personal data)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 28(3) lists mandatory contract content beyond the items summarised here. Legal advice is needed on the contract.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-VND-01.GDPR.2",
+      "control_id": "KIT-VND-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 30(1)(d)",
+        "Art. 30(2)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 30(1)(d) requires a controller's record of processing to include the categories of recipients to whom personal data have been or will be disclosed, including recipients in third countries. Art. 30(2) requires a processor to keep a record of the categories of processing it carries out for each controller. The vendor register is a source for the recipient information.",
+      "requirements_covered": [
+        "Identifying the recipients of personal data (vendors and sub-processors) and where they are"
+      ],
+      "exclusions": [
+        "The record of processing itself is mapped under KIT-PRV-01",
+        "A processor's own record under Art. 30(2) is not templated"
+      ],
+      "dependencies": [
+        "KIT-PRV-01 (record of processing)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 30 has an exemption for small organisations that is narrow (Art. 30(5)); see KIT-PRV-01.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-VND-01.DORA.1",
+      "control_id": "KIT-VND-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 28(1)",
+        "Art. 28(2)",
+        "Art. 28(3)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 28(1) requires financial entities to manage ICT third-party risk as an integral part of their ICT risk management framework and to remain fully responsible for compliance when they use ICT services, applying proportionality. Art. 28(2) requires a strategy on ICT third-party risk, with a policy on ICT services supporting critical or important functions (not for microenterprises). Art. 28(3) requires a register of information on all contractual arrangements for ICT services, distinguishing those supporting critical or important functions, with at least yearly reporting to the competent authorities.",
+      "requirements_covered": [
+        "A vendor register with classification, yearly review of critical vendors and exit notes (a related practice for the organisation's own vendors)"
+      ],
+      "exclusions": [
+        "A register of information distinguishing arrangements that support critical or important functions, and yearly reporting to the competent authority (Art. 28(3)), is not provided",
+        "A strategy on ICT third-party risk (Art. 28(2)) is not templated"
+      ],
+      "dependencies": [
+        "KIT-GOV-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 28(1) to (3) were read; paragraph 4 onwards was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-VND-01.DORA.2",
+      "control_id": "KIT-VND-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 30(1)",
+        "Art. 30(2)",
+        "Art. 30(3)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 30(1) requires the rights and obligations of the financial entity and the ICT provider to be set out in writing. Art. 30(2) lists at least the elements every ICT service contract must contain. Art. 30(3) adds elements for services supporting critical or important functions. The DORA screening page paraphrases these elements so a startup knows what a financial-entity customer may ask for.",
+      "requirements_covered": [
+        "A paraphrased list of the Art. 30(2) and (3) elements for orientation (scoping/dora-screening.md)"
+      ],
+      "exclusions": [
+        "No contract wording or negotiation guidance is provided",
+        "The paraphrase is a summary: the Regulation's text governs"
+      ],
+      "dependencies": [
+        "Legal advice on the customer contract",
+        "KIT-INC-01 and KIT-BKP-01 (evidence a provider can offer)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "These are contract terms the customer must include; they are not direct duties on the provider under Art. 30. Art. 30(1) to (4) were read.",
+      "obligation_type": [
+        "contractual flow-down"
+      ],
+      "obligation_detail": "contractual flow-down (a term a financial-entity customer may require)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.SOC2.1",
+      "control_id": "KIT-PRV-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "Privacy criteria P1 to P8",
+        "C1"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Notice, choice, collection, use and retention, access, disclosure, quality, monitoring; confidentiality",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): A GDPR operating process: data inventory, record of processing with a lawful basis per purpose, retention and deletion, data subject requests, international transfers, privacy by design review, DPIA and DPO screening, and accountability"
+      ],
+      "exclusions": [
+        "Only if Privacy or Confidentiality categories are in scope; criteria are not the same as GDPR duties",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-PRV-01.ISO27001.1",
+      "control_id": "KIT-PRV-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.5.34"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Privacy and protection of personally identifiable information",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): A GDPR operating process: data inventory, record of processing with a lawful basis per purpose, retention and deletion, data subject requests, international transfers, privacy by design review, DPIA and DPO screening, and accountability"
+      ],
+      "exclusions": [
+        "A privacy programme and legal analysis; the control alone does not meet legal duties",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.1",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 5(1)",
+        "Art. 5(2)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 5(1) sets the principles: lawfulness, fairness and transparency; purpose limitation; data minimisation; accuracy; storage limitation; and integrity and confidentiality. Art. 5(2) makes the controller responsible for, and able to demonstrate, compliance (accountability). The data inventory, the record of processing with a lawful basis per purpose, retention rules and the accountability page address several of them.",
+      "requirements_covered": [
+        "A recorded lawful basis per purpose (Art. 5(1)(a))",
+        "Purposes stated in the record of processing (Art. 5(1)(b))",
+        "Minimisation through the data inventory and privacy by design review (Art. 5(1)(c))",
+        "Retention and deletion rules (Art. 5(1)(e))",
+        "Dated records that help demonstrate compliance (Art. 5(2))"
+      ],
+      "exclusions": [
+        "Accuracy (Art. 5(1)(d)) is handled only through data subject requests, not templated",
+        "Transparency (the content of a privacy notice) is referenced, not templated",
+        "Integrity and confidentiality (Art. 5(1)(f)) are addressed by the technical controls, not by this control",
+        "Whether a lawful basis is valid for a given purpose is a legal judgement"
+      ],
+      "dependencies": [
+        "Legal advice on lawful bases",
+        "KIT-GOV-01 (accountability)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This control is a starting process written by engineers. It has not been reviewed by a privacy specialist.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.2",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 25(1)",
+        "Art. 25(2)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 25(1) and (2) require data protection by design and by default: appropriate measures designed to implement the principles effectively, and by default only the personal data necessary for each purpose. The privacy by design review asks about necessity, minimisation, defaults and retention before a feature ships.",
+      "requirements_covered": [
+        "A privacy by design review before a feature ships, covering necessity, minimisation, defaults, retention and the ability to answer requests"
+      ],
+      "exclusions": [
+        "The technical measures (for example pseudonymisation) are not specified",
+        "Certification as an element to show compliance (Art. 25(3)) is not covered"
+      ],
+      "dependencies": [
+        "KIT-CHG-01 (where the review is attached to a change)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 25 depends on the state of the art, cost and risk. This mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.3",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 30(1)",
+        "Art. 30(2)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 30(1) lists what a controller's record of processing must contain: controller and contact details, purposes, categories of data subjects and data, categories of recipients, transfers to third countries, envisaged erasure time limits where possible, and a general description of security measures where possible. Art. 30(2) lists what a processor's record must contain.",
+      "requirements_covered": [
+        "Purposes, categories of data and people, recipients, transfers and safeguards, and retention, in the record-of-processing template",
+      "A documented decision on whether the Art. 30(5) exemption may apply, with its conditions and reasons"
+      ],
+      "exclusions": [
+        "The controller's or representative's name and the DPO contact (Art. 30(1)(a)) are only partly captured",
+        "A general description of security measures (Art. 30(1)(g)) is not a field in the template",
+        "A processor's record (Art. 30(2)) is not templated",
+        "The Art. 30(5) applicability record records a decision; it does not make it, and no authority guidance on counting persons or judging \"occasional\" was read"
+      ],
+      "dependencies": [
+        "KIT-VND-01 (recipients)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 30(5) exempts organisations with fewer than 250 persons unless the processing is likely to result in a risk, is not occasional, or includes special categories or criminal convictions data.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.4",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 12(3)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 12(3) requires the controller to provide information on action taken on a rights request without undue delay and in any event within one month of receipt, extendable by two further months where necessary given complexity and number of requests, with notice of the extension and reasons within the first month. The data subject requests page uses that timing.",
+      "requirements_covered": [
+        "A request log with receipt date, a one-month deadline, the extension rule and the duty to explain a delay",
+        "A reply that records the outcome and any reason for not acting"
+      ],
+      "exclusions": [
+        "Art. 12(4) (informing the person of the reasons for not acting and of the right to complain) is mentioned in the reply step but the text of Art. 12(2) and (5) to (8) was not read for this mapping",
+        "Identity verification limits and manifestly unfounded or excessive requests are not covered"
+      ],
+      "dependencies": [
+        "Legal advice on exemptions"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Only Art. 12(3) and the start of Art. 12(4) were read for this record.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.5",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 15",
+        "Art. 16",
+        "Art. 17",
+        "Art. 18",
+        "Art. 20",
+        "Art. 21"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Chapter III gives data subjects rights: access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction (Art. 18), portability (Art. 20) and objection (Art. 21). The data subject requests page names these rights and gives a procedure.",
+      "requirements_covered": [
+        "A procedure for finding, deciding, acting on, replying to and recording rights requests"
+      ],
+      "exclusions": [
+        "The conditions and exemptions of each right are not stated by the kit",
+        "Notification of recipients (Art. 19) and automated decision-making (Art. 22) are not covered"
+      ],
+      "dependencies": [
+        "Legal advice on whether a right applies"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: only the titles of Arts. 15 to 22 were checked; the conditions of each right were not read for this mapping (source verification pending).>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.6",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 35",
+        "Art. 36(1)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 35(1) requires an assessment where processing is likely to result in a high risk, taking into account its nature, scope, context and purposes. Art. 35(3) lists cases where it is in particular required, Art. 35(4) and (5) provide for supervisory authority lists, Art. 35(7) sets minimum contents, and Art. 36(1) requires prior consultation where the assessment indicates a high risk absent mitigation. The DPIA screening page is a preliminary screening with a reviewable record.",
+      "requirements_covered": [
+        "Preliminary screening against the Art. 35(3) cases and the authority list, with a reviewable decision record",
+        "The Art. 35(7) minimum contents and Art. 36(1) prior consultation are described"
+      ],
+      "exclusions": [
+        "A DPIA template is not provided, only the contents",
+        "The content of the supervisory authority's lists (Art. 35(4), (5)) is not provided",
+        "Seeking the views of data subjects (Art. 35(9)) and DPO advice (Art. 35(2)) are mentioned, not templated",
+        "The prior consultation process under Art. 36 is mentioned only"
+      ],
+      "dependencies": [
+        "The user's own supervisory authority lists"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "The screening is decision support, not a legal threshold.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.GDPR.7",
+      "control_id": "KIT-PRV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 44",
+        "Art. 45",
+        "Art. 46",
+        "Art. 47",
+        "Art. 49"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Chapter V sets a general principle for transfers (Art. 44) and the routes: adequacy decision (Art. 45), appropriate safeguards (Art. 46), binding corporate rules (Art. 47) and derogations for specific situations (Art. 49). The international transfers page records, for each transfer, the parties and roles, the route (adequacy, appropriate safeguards or derogation) and the module of standard clauses where used, the assessment, supplementary measures, onward transfers, sources, approver and reassessment triggers.",
+      "requirements_covered": [
+        "Recording each transfer, its route and module, the parties and roles, the assessment of the destination, supplementary measures, onward transfers, the sources used, an independent approver and reassessment triggers"
+      ],
+      "exclusions": [
+        "Whether a route is lawful for a given transfer is a legal judgement the template records but does not make",
+        "The requirements for binding corporate rules (Art. 47) and authorisations under Art. 46(3) are not assessed",
+        "Art. 48 (transfers or disclosures not authorised by Union law) is not covered"
+      ],
+      "dependencies": [
+        "Legal advice on transfers"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Arts. 44 to 49 were read in full on 2026-10-12, with Decision (EU) 2021/914 Art. 1 and Clauses 8.7, 8.8, 9 and 14. The EDPB Recommendations 01/2020 and case law were not read, so how supplementary measures are judged is not covered. No country's adequacy status or law is stated.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-PRV-01.DORA.1",
+      "control_id": "KIT-PRV-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(2)",
+        "Art. 9(3)",
+        "Art. 9(4)(a)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9 concerns the ICT security of a financial entity's data and systems: availability, authenticity, integrity and confidentiality of data, and an information security policy. The privacy process concerns personal data under the GDPR. Which of the kit's privacy guidance, if any, helps meet Art. 9 is a judgement for an expert.",
+      "requirements_covered": [
+        "The data classification and handling policy template and retention and deletion rules"
+      ],
+      "exclusions": [
+        "Personal data duties are GDPR duties; Art. 9 concerns ICT security of data and systems",
+        "Most Art. 9 measures are delivered by the technical controls KIT-ACC-01 to KIT-VUL-01, not by this control"
+      ],
+      "dependencies": [
+        "KIT-ACC-01 to KIT-VUL-01"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: whether the privacy process maps to the Art. 9 security objectives is a judgement for a qualified reviewer (source verification pending for that judgement).>",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-INC-01.SOC2.1",
+      "control_id": "KIT-INC-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC7.3 to CC7.5"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Evaluating, responding to and recovering from incidents",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): An incident owner, severity levels, a role-based first-hour runbook, an incident register and report template, a tabletop exercise, and blameless post-incident notes"
+      ],
+      "exclusions": [
+        "Defined incident process, classification, incident records across the period",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-INC-01.ISO27001.1",
+      "control_id": "KIT-INC-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.5.24 to A.5.28"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Planning, assessing, responding, learning, collecting evidence",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): An incident owner, severity levels, a role-based first-hour runbook, an incident register and report template, a tabletop exercise, and blameless post-incident notes"
+      ],
+      "exclusions": [
+        "An incident management procedure, training, records",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-INC-01.GDPR.1",
+      "control_id": "KIT-INC-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 33",
+        "Art. 34"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 33(1) requires the controller to notify the supervisory authority without undue delay and, where feasible, within 72 hours of becoming aware, unless the breach is unlikely to result in a risk; Art. 33(2) requires the processor to notify the controller without undue delay; Art. 33(5) requires the controller to document every breach. Art. 34 requires communication to the people affected where there is likely a high risk, with exceptions. The incident runbook separates controller and processor duties and the register documents every breach.",
+      "requirements_covered": [
+        "A role-based first-hour runbook separating controller and processor duties (Art. 33(1), (2))",
+        "An awareness timestamp, a decision log and a register that documents every breach, notified or not (Art. 33(5))",
+        "An assessment of whether affected people must be told, including the Art. 34(3) exceptions (Art. 34)"
+      ],
+      "exclusions": [
+        "Notification templates for the Art. 33(3) content and the supervisory authority's contact process are not provided",
+        "Identifying the competent supervisory authority (Art. 55) and joint controller arrangements (Art. 26) are not covered",
+        "Whether a breach is likely to result in a risk or a high risk is a legal judgement"
+      ],
+      "dependencies": [
+        "KIT-LOG-01 (detection)",
+        "KIT-PRV-01 (role as controller or processor)"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Community draft. Take specialist advice for any real breach.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-INC-01.DORA.1",
+      "control_id": "KIT-INC-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 17(1)",
+        "Art. 17(2)",
+        "Art. 17(3)",
+        "Art. 18(1)",
+        "Art. 19(1)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 17 requires an ICT-related incident management process to detect, manage and notify incidents, recording all incidents and significant cyber threats, with roles and responsibilities and communication and escalation plans. Art. 18(1) sets criteria for classifying incidents (clients affected, duration, geographical spread, data losses, criticality of services, economic impact). Art. 19(1) requires major incidents to be reported to the competent authority using templates.",
+      "requirements_covered": [
+        "An incident process with roles, severity levels, a register and a post-incident report (Art. 17(1), (2), (3)(b), (c))",
+        "Recording incidents including near misses (Art. 17(2))"
+      ],
+      "exclusions": [
+        "The Art. 18(1) classification criteria are not used: the kit uses its own severity levels",
+        "Early warning indicators (Art. 17(3)(a)) are not covered",
+        "Reporting major incidents to the competent authority with the prescribed templates and timelines (Art. 19) is not covered",
+        "Art. 17(4) onwards was not read"
+      ],
+      "dependencies": [
+        "KIT-LOG-01",
+        "KIT-PRV-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 17(1) to (3), the start of Art. 18 and the start of Art. 19 were read.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-INC-01.DORA.2",
+      "control_id": "KIT-INC-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 30(2)(f)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 30(2)(f) requires contracts to oblige the ICT provider to assist the financial entity, at no additional cost or at a cost determined in advance, when an ICT incident related to the service occurs. The incident runbook has a processor path for notifying each customer using the contacts and deadlines in the agreement.",
+      "requirements_covered": [
+        "A processor path in the incident runbook for notifying each affected customer, with a table of contractual deadlines and contacts"
+      ],
+      "exclusions": [
+        "The commitment to assist, and its cost basis, are contract terms the kit does not draft"
+      ],
+      "dependencies": [
+        "Legal advice on the customer contract"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This is a contract term a customer may require; it is not a direct duty on the provider under Art. 30.",
+      "obligation_type": [
+        "contractual flow-down"
+      ],
+      "obligation_detail": "contractual flow-down (a term a financial-entity customer may require)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-SCM-01.SOC2.1",
+      "control_id": "KIT-SCM-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC7.1",
+        "CC8.1"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Detecting vulnerabilities; controlled, authorised change",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Build once and promote by digest, keyless signing verified on the host with a refusal test, vulnerability scanning, pinned and checksummed tools, a software bill of materials, and a protected pipeline"
+      ],
+      "exclusions": [
+        "Evidence that only authorised artefacts run",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-SCM-01.ISO27001.1",
+      "control_id": "KIT-SCM-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.8.8",
+        "Annex A control A.8.25",
+        "Annex A control A.8.28",
+        "Annex A control A.5.21"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Technical vulnerabilities, secure development, secure coding, ICT supply chain",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Build once and promote by digest, keyless signing verified on the host with a refusal test, vulnerability scanning, pinned and checksummed tools, a software bill of materials, and a protected pipeline"
+      ],
+      "exclusions": [
+        "Policy, supplier requirements, risk treatment",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-SCM-01.GDPR.1",
+      "control_id": "KIT-SCM-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 32(1)(b)",
+        "Art. 32(1)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Signed, verified builds and scanning help ensure the integrity of processing systems (Art. 32(1)(b)) and are tests of the effectiveness of security measures (Art. 32(1)(d)).",
+      "requirements_covered": [
+        "Verifying that what runs was built by the organisation's pipeline, and scanning dependencies and images"
+      ],
+      "exclusions": [
+        "Which measures are appropriate to the risk is not decided here",
+        "The signing does not show that the code is free of flaws"
+      ],
+      "dependencies": [
+        "KIT-VUL-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 32 is risk-based: whether a measure is appropriate depends on the processing, so this mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-SCM-01.DORA.1",
+      "control_id": "KIT-SCM-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(3)(b)",
+        "Art. 9(4)(e)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9(3)(b) requires ICT solutions and processes that minimise the risk of corruption or loss of data, unauthorised access and technical flaws that may hinder business activity. Art. 9(4)(e) requires controlled ICT change management. Verifying that only artefacts built by the organisation's pipeline run is a control against unauthorised or flawed software.",
+      "requirements_covered": [
+        "Verifying signatures before running an image, scanning dependencies and images, and controlled change"
+      ],
+      "exclusions": [
+        "ICT third-party risk for build tools and dependencies is addressed under vendor management (Art. 28), not here",
+        "Signing does not show that the code is free of flaws"
+      ],
+      "dependencies": [
+        "KIT-CHG-01",
+        "KIT-VND-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 9(1) to 9(4)(f) were read; the text after the change-management sentence of Art. 9(4) was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-VUL-01.SOC2.1",
+      "control_id": "KIT-VUL-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC7.1"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Vulnerability detection and monitoring",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Dependency, image and configuration scanning, triage and severity-based remediation deadlines, exceptions in the risk register, verification of fixes, a security contact, and penetration testing when needed"
+      ],
+      "exclusions": [
+        "A defined remediation standard and exceptions, evidenced across the period",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-VUL-01.ISO27001.1",
+      "control_id": "KIT-VUL-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.8.8",
+        "Annex A control A.8.9",
+        "Annex A control A.8.19"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Technical vulnerabilities, configuration management, software installation",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Dependency, image and configuration scanning, triage and severity-based remediation deadlines, exceptions in the risk register, verification of fixes, a security contact, and penetration testing when needed"
+      ],
+      "exclusions": [
+        "Vulnerability management procedure, patching records, internal audit",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-VUL-01.GDPR.1",
+      "control_id": "KIT-VUL-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 32(1)(d)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 32(1)(d) asks for a process for regularly testing, assessing and evaluating the effectiveness of technical and organisational measures. Scanning, triage, deadlines and verified fixes are such a process for known weaknesses.",
+      "requirements_covered": [
+        "Regular scanning, severity-based remediation deadlines and verification of fixes"
+      ],
+      "exclusions": [
+        "Other forms of testing (restore tests, access reviews) are in other controls",
+        "Unknown flaws are not found by scanning"
+      ],
+      "dependencies": [
+        "KIT-BKP-01",
+        "KIT-ACC-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Art. 32 is risk-based: whether a measure is appropriate depends on the processing, so this mapping shows relevance, not sufficiency.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-VUL-01.DORA.1",
+      "control_id": "KIT-VUL-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 9(4)(f)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 9(4)(f) requires appropriate and comprehensive documented policies for patches and updates. The vulnerability remediation standard sets deadlines, ownership, exceptions and verification for fixes.",
+      "requirements_covered": [
+        "A documented remediation standard with severity-based deadlines, patching and verification"
+      ],
+      "exclusions": [
+        "Patches and updates for hardware and firmware are not specifically addressed",
+        "Other DORA testing requirements were not read for this mapping"
+      ],
+      "dependencies": [
+        "KIT-CHG-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 9(1) to 9(4)(f) were read; the text after the change-management sentence of Art. 9(4) was not.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-GOV-01.SOC2.1",
+      "control_id": "KIT-GOV-01",
+      "framework": "SOC 2",
+      "edition": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "source_reference": [
+        "CC1.1 to CC1.5",
+        "CC3.1 to CC3.4",
+        "CC5.3"
+      ],
+      "source_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "mapping_rationale": "Control environment, risk assessment, policies and procedures",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the criterion asks): Written roles, a scored risk register with acceptance rules, short policies, onboarding and offboarding, awareness training, an annual management review, and a scoping questionnaire"
+      ],
+      "exclusions": [
+        "Board or management oversight, a formal risk assessment process, documented policies applied",
+        "The kit does not choose the criteria in scope, describe the system, or produce the evidence of operation over a period; the examiner tests what the organisation describes"
+      ],
+      "dependencies": [
+        "Scope, the choice of Trust Services categories, the system description and an operating history over the examination period are separate requirements of a SOC 2 examination (see guide/paths/soc2.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the criteria document requires a free AICPA account and was not downloaded for this mapping. The criterion identifiers and what they require are unverified (source verification pending). The publication's title and date ('2017 Trust Services Criteria (With Revised Points of Focus - 2022)', 30 September 2023) were confirmed from the publisher's public page. The rationale was written from the authors' general knowledge. A qualified reviewer must confirm each identifier and category against the document.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-GOV-01.ISO27001.1",
+      "control_id": "KIT-GOV-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Annex A control A.5.1",
+        "Annex A control A.5.2",
+        "Annex A control A.5.4",
+        "Annex A control A.6.1 to A.6.8"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Organisational and people controls in Annex A relate to policies, roles and responsibilities and people-related controls; the kit's governance control provides some of the artefacts they expect (identifier titles unverified)",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Written roles, a scored risk register with acceptance rules, short policies, onboarding and offboarding, awareness training, an annual management review, and a scoping questionnaire"
+      ],
+      "exclusions": [
+        "A functioning ISMS (risk assessment and treatment, Statement of Applicability, internal audit, management review and continual improvement) is a separate requirement",
+        "Annex A controls are selected through a risk assessment and recorded in a Statement of Applicability with justifications; the kit does not perform that selection for the user"
+      ],
+      "dependencies": [
+        "The control baseline is not a complete ISMS: the management system clauses (4 to 10), including risk assessment and treatment, the Statement of Applicability, internal audit, management review and continual improvement, are separate requirements (see guide/paths/iso27001.md)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-GOV-01.ISO27001.2",
+      "control_id": "KIT-GOV-01",
+      "framework": "ISO/IEC 27001",
+      "edition": "2022",
+      "source_reference": [
+        "Clauses 4 to 10 (management system requirements)"
+      ],
+      "source_url": "<pending: the ISO standard page returned HTTP 403 to automated fetch on 2026-10-09; verify the page manually>",
+      "mapping_rationale": "Clauses 4 to 10 are the requirements of the management system itself (context, leadership, planning, support, operation, performance evaluation, improvement); the kit's governance control provides only some of the artefacts they expect",
+      "requirements_covered": [
+        "Kit guidance (not a statement of what the requirement asks): Written roles, a scored risk register with acceptance rules, short policies, onboarding and offboarding, awareness training, an annual management review, and a scoping questionnaire"
+      ],
+      "exclusions": [
+        "No Statement of Applicability, risk treatment plan, internal audit programme or continual improvement process is provided by the kit",
+        "Leadership commitment and top-management review are management responsibilities"
+      ],
+      "dependencies": [
+        "Annex A control selection (a Statement of Applicability) depends on the risk assessment required by these clauses",
+        "Leadership commitment and assigned responsibilities (a management decision, not a kit deliverable)"
+      ],
+      "coverage_status": "needs expert review",
+      "limitations": "<pending: the standard's text is not freely available and could not be read for this mapping. The identifiers, their titles and what they require are therefore unverified (source verification pending), and the rationale above was written from the authors' general knowledge. A qualified reviewer must confirm each identifier against the standard.>",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [0.1.0]; moved into mappings.json (review finding F-13)"
+    },
+    {
+      "id": "KIT-GOV-01.GDPR.1",
+      "control_id": "KIT-GOV-01",
+      "framework": "GDPR",
+      "edition": "Regulation (EU) 2016/679",
+      "source_reference": [
+        "Art. 24(1)",
+        "Art. 24(2)",
+        "Art. 5(2)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "mapping_rationale": "Art. 24(1) requires the controller to implement appropriate technical and organisational measures, taking into account nature, scope, context, purposes and the risks, to ensure and be able to demonstrate compliance, and to review and update them. Art. 24(2) adds data protection policies where proportionate. Art. 5(2) is accountability.",
+      "requirements_covered": [
+        "Written roles, a scored risk register, short policies and an annual management review (supports reviewing and updating measures)",
+        "Policy templates for classification, retention and continuity (supports Art. 24(2))"
+      ],
+      "exclusions": [
+        "A GDPR-specific data protection policy set is only partly provided (see privacy/)",
+        "Using approved codes of conduct or certification to demonstrate compliance (Art. 24(3)) is not covered",
+        "The kit does not assess the risks to individuals that Art. 24(1) refers to"
+      ],
+      "dependencies": [
+        "KIT-PRV-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "Community draft. Accountability means keeping real evidence; this mapping shows what the kit offers.",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    },
+    {
+      "id": "KIT-GOV-01.DORA.1",
+      "control_id": "KIT-GOV-01",
+      "framework": "DORA",
+      "edition": "Regulation (EU) 2022/2554",
+      "source_reference": [
+        "Art. 5(1)",
+        "Art. 5(2)",
+        "Art. 6(1)",
+        "Art. 6(5)"
+      ],
+      "source_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "mapping_rationale": "Art. 5(2) requires the management body to define, approve, oversee and be responsible for the ICT risk management framework, bear ultimate responsibility for ICT risk, put in place policies on availability, authenticity, integrity and confidentiality, and set clear roles and responsibilities. Art. 6(1) requires a sound, comprehensive and well-documented ICT risk management framework. Art. 6(5) requires it to be documented and reviewed at least once a year.",
+      "requirements_covered": [
+        "Written roles, a risk register, policies and an annual management review (supports documentation and the yearly review in Art. 6(5))"
+      ],
+      "exclusions": [
+        "The management body's ultimate responsibility, the digital operational resilience strategy and the risk tolerance (Art. 5(2)(d), Art. 6(8)) are not covered",
+        "A control function with independence and the three lines of defence (Art. 6(4)) are not covered",
+        "Approval and oversight of the ICT business continuity policy and response and recovery plans (Art. 5(2)(e)) are not covered"
+      ],
+      "dependencies": [
+        "KIT-PRV-01",
+        "KIT-BKP-01"
+      ],
+      "coverage_status": "covered in part",
+      "limitations": "This duty is owed by a financial entity. A startup supplier is not directly bound by it; a financial-entity customer may require equivalent measures by contract (contractual flow-down). Art. 5(1) to 5(2)(e) and Art. 6(1) to 6(5) were read in part.",
+      "obligation_type": [
+        "direct statutory duty"
+      ],
+      "obligation_detail": "direct statutory duty (of a financial entity)",
+      "review": {
+        "label": "community draft",
+        "reviewer_role": null,
+        "review_date": null,
+        "decision": null,
+        "rationale": null,
+        "next_review_trigger": "On maintainer review, or when the source edition changes"
+      },
+      "change_reference": "CHANGELOG.md [Unreleased]; backfilled from the official text (review finding F-04)"
+    }
+  ]
+}

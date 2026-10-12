@@ -1,0 +1,42 @@
+{
+  "note": "Phrases that must never appear in anything the kit generates or prints as a status, result or label, because they could be read as an external outcome (an examination passed, a certificate held, readiness for audit) when the kit has only checked internal state. Matched case-insensitively. Single words are matched as whole words. Used by audit/tests/test_status_wording.py. Prose in documents is checked separately. The prose check (scripts/check_claims.py) also uses prose_only_phrases and reads every text file in the repository; places that must mention a phrase are listed with a reason in scripts/claims_allowlist.json.",
+  "phrases": [
+    "soc 2 ready",
+    "soc2 ready",
+    "soc 2 compliant",
+    "soc 2 certified",
+    "iso ready",
+    "iso 27001 ready",
+    "iso 27001 certified",
+    "iso certified",
+    "audit ready",
+    "audit-ready",
+    "audit passed",
+    "passed the audit",
+    "passed your audit",
+    "passed the examination",
+    "ready for audit",
+    "ready for the audit",
+    "ready for certification",
+    "certification ready",
+    "certification achieved",
+    "compliance achieved",
+    "compliance ready",
+    "due diligence ready",
+    "due-diligence ready",
+    "assurance achieved",
+    "fully compliant",
+    "you are compliant",
+    "is compliant",
+    "certified",
+    "compliant",
+    "assured",
+    "guaranteed"
+  ],
+  "prose_only_phrases": [
+    "legally sound",
+    "guaranteed compliance",
+    "compliance guaranteed",
+    "verified compliance"
+  ]
+}

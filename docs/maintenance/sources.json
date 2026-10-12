@@ -1,0 +1,170 @@
+{
+  "note": "Source of truth for the source watch list. Validated and rendered by scripts/source_impact.py; docs/maintenance/source-watch-list.md is generated from this file. A source is something the kit's content relies on: a law, standard, criteria set, regulator guidance or tool. Owners are roles, not names.",
+  "sources": [
+    {
+      "id": "gdpr", "name": "General Data Protection Regulation", "type": "law", "framework": "GDPR",
+      "edition_mapped": "Regulation (EU) 2016/679",
+      "official_url": "https://publications.europa.eu/resource/celex/32016R0679",
+      "url_status": "Fetched on 2026-10-09 (Publications Office edition, English). EUR-Lex itself returned an empty bot-challenge page.",
+      "last_checked": "2026-10-09",
+      "checked_what": "Articles 3, 4(7), 4(8), 4(12), 5, 12(3), 24, 25, 27, 28, 30, 32, 33, 34, 35 and 36(1) read in full or in the relevant paragraphs; Chapter V (Articles 44 to 49) read in full on 2026-10-12; titles of Articles 12 to 23 and 50 only.",
+      "owner": "privacy contact (a maintainer)", "review_cadence_days": 365, "review_cadence": "At least yearly, and on any announced amendment",
+      "documents": ["privacy/README.md", "privacy/dpia-screening.md", "privacy/data-subject-requests.md", "privacy/international-transfers.md", "privacy/international-transfers-example.md", "privacy/record-of-processing.md", "scoping/gdpr-territorial-scope.md", "runbooks/incident-response.md", "runbooks/tabletop-incident-notification.md"],
+      "notes": "Articles 15 to 22 beyond titles have not been read. Article 47 (binding corporate rules) and Article 50 were not relied on in detail."
+    },
+    {
+      "id": "scc-2021-914", "name": "Commission standard contractual clauses for transfers to third countries", "type": "law", "framework": null,
+      "edition_mapped": "Commission Implementing Decision (EU) 2021/914 of 4 June 2021",
+      "official_url": "https://publications.europa.eu/resource/celex/32021D0914",
+      "url_status": "Fetched on 2026-10-12 (Publications Office edition, English).",
+      "last_checked": "2026-10-12",
+      "checked_what": "Articles 1 to 4 of the Decision; the four module titles; Clauses 7 (docking), 8.7 and 8.8 (onward transfers), 9 (sub-processor options), 14 (local laws and practices, paragraphs (a) to (f)) and the title of Annex III.",
+      "owner": "privacy contact (a maintainer)", "review_cadence_days": 365, "review_cadence": "At least yearly, and when the Commission amends or replaces the clauses",
+      "documents": ["privacy/international-transfers.md", "privacy/international-transfers-example.md"],
+      "notes": "Other clauses (liability, supervision, termination, governing law) were not read. Clause numbers cited are those of Modules One to Three as read; Module Four was not relied on beyond its title."
+    },
+    {
+      "id": "edpb-recs-01-2020", "name": "EDPB Recommendations 01/2020 on measures that supplement transfer tools", "type": "regulator guidance", "framework": null,
+      "edition_mapped": "Final version, 18 June 2021",
+      "official_url": "https://www.edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en",
+      "url_status": "Publication page fetched on 2026-10-12. The PDF was not downloaded.",
+      "last_checked": "2026-10-12",
+      "checked_what": "Title, document type and date (18 June 2021, final version) on the publication page only. The recommendations themselves were not read.",
+      "owner": "privacy contact (a maintainer)", "review_cadence_days": 365, "review_cadence": "At least yearly, and when the EDPB publishes an update",
+      "documents": ["privacy/international-transfers.md"],
+      "notes": "The transfer template names supplementary measures using the wording of Clause 14(b)(iii) of the standard clauses, not this document. Reading it is a pending citation."
+    },
+    {
+      "id": "dora", "name": "Digital Operational Resilience Act", "type": "law", "framework": "DORA",
+      "edition_mapped": "Regulation (EU) 2022/2554",
+      "official_url": "https://publications.europa.eu/resource/celex/32022R2554",
+      "url_status": "Fetched on 2026-10-09 (Publications Office edition, English).",
+      "last_checked": "2026-10-09",
+      "checked_what": "Articles 2, 3, 4, 28(1) to (3), 30(1) to (4), 31(1), (2), (11) to (13) and 33(1) read; Articles 5, 6, 9 to 12 and 17 to 19 read in part.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "At least yearly, and on any announced amendment",
+      "documents": ["scoping/dora-screening.md", "scoping/applicability-matrix.md", "guide/layers-and-outcomes.md", "guide/roadmap.md"],
+      "notes": "Technical standards that the Regulation asks the European Supervisory Authorities to develop (for example under Article 30(5)) are not tracked yet."
+    },
+    {
+      "id": "soc2-tsc", "name": "AICPA Trust Services Criteria", "type": "criteria", "framework": "SOC 2",
+      "edition_mapped": "2017 Trust Services Criteria (With Revised Points of Focus - 2022)",
+      "official_url": "https://www.aicpa-cima.com/resources/download/2017-trust-services-criteria-with-revised-points-of-focus-2022",
+      "url_status": "Publisher page fetched on 2026-10-09. The criteria document needs a free account and was not downloaded.",
+      "last_checked": "2026-10-09",
+      "checked_what": "Publication title and date (30 September 2023) only. The criteria themselves were not read.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "At least yearly, and when a new edition or points of focus are published",
+      "documents": ["guide/paths/soc2.md"],
+      "notes": "Every SOC 2 mapping record is needs expert review until the criteria are checked."
+    },
+    {
+      "id": "iso-27001", "name": "ISO/IEC 27001 information security management systems", "type": "standard", "framework": "ISO/IEC 27001",
+      "edition_mapped": "2022",
+      "official_url": null,
+      "url_status": "Not found: the ISO site returned HTTP 403 to automated fetch on 2026-10-09. Find and verify the standard's page manually.",
+      "last_checked": null,
+      "checked_what": "Nothing. The standard is paid and could not be read.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "At least yearly, and when an amendment or corrigendum is published",
+      "documents": ["guide/paths/iso27001.md"],
+      "notes": "Every ISO mapping record is needs expert review. Amendments and corrigenda have not been checked."
+    },
+    {
+      "id": "nis2", "name": "NIS2 Directive", "type": "law", "framework": null,
+      "edition_mapped": "Directive (EU) 2022/2555",
+      "official_url": "https://publications.europa.eu/resource/celex/32022L2555",
+      "url_status": "Fetched on 2026-10-12 (Publications Office edition, English).",
+      "last_checked": "2026-10-12",
+      "checked_what": "Articles 1, 2, 3, 6 (definitions of cloud computing service, managed service provider and managed security service provider), 21(1) to (3), 26, 27(1) and (2), 41(1) and the title of Article 44; Annexes I and II (sector lists) read in full.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "At least yearly, and on any announced amendment",
+      "documents": ["scoping/applicability-matrix.md", "scoping/extensions/nis2-screening.md", "scoping/extensions/README.md"],
+      "notes": "Used for screening only; the kit does not assess NIS2 compliance. Articles 4 to 5, 7 to 20, 22 to 25, 28 onwards (other than those listed) were not read. National transposition is not tracked: the worksheet makes each user record the national law, its status and the date checked. Guidance from the Commission and ENISA and the Art. 21(5) implementing acts were not read."
+    },
+    {
+      "id": "recommendation-2003-361", "name": "Commission Recommendation 2003/361/EC concerning the definition of micro, small and medium-sized enterprises", "type": "law", "framework": null,
+      "edition_mapped": "Recommendation 2003/361/EC of 6 May 2003",
+      "official_url": "https://publications.europa.eu/resource/celex/32003H0361",
+      "url_status": "Fetched on 2026-10-12 (Publications Office PDF, English). It is a recommendation, not binding law; NIS2 Art. 2(1) makes its Annex the size test.",
+      "last_checked": "2026-10-12",
+      "checked_what": "Annex Articles 2 and 3 (ceilings, partner and linked enterprises, Art. 3(4)) and the titles of Articles 4 to 6.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "At least yearly, and when the Commission revises the definition",
+      "documents": ["scoping/extensions/nis2-screening.md"],
+      "notes": "Articles 4 to 6 (data, reference period, staff headcount rules) were not read. Cited only as the size test referred to by NIS2 Art. 2(1)."
+    },
+    {
+      "id": "edpb-3-2018", "name": "EDPB Guidelines 3/2018 on the territorial scope of the GDPR (Article 3)", "type": "regulator guidance", "framework": null,
+      "edition_mapped": "Version adopted after public consultation, 12 November 2019",
+      "official_url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-32018-territorial-scope-gdpr-article-3-version_en",
+      "url_status": "Page fetched on 2026-10-09.",
+      "last_checked": "2026-10-09",
+      "checked_what": "Page title and adoption date only. The guidelines were not read.",
+      "owner": "privacy contact (a maintainer)", "review_cadence_days": 365, "review_cadence": "At least yearly",
+      "documents": ["scoping/gdpr-territorial-scope.md"],
+      "notes": "Cited as further reading; no specific point in it is relied on."
+    },
+    {
+      "id": "wp248", "name": "Article 29 Working Party Guidelines on Data Protection Impact Assessment (wp248rev.01)", "type": "regulator guidance", "framework": null,
+      "edition_mapped": "wp248rev.01, listed 13 October 2017",
+      "official_url": "https://ec.europa.eu/newsroom/article29/items/611236",
+      "url_status": "Page fetched on 2026-10-09.",
+      "last_checked": "2026-10-09",
+      "checked_what": "Page title and listing date only. The criteria were not read.",
+      "owner": "privacy contact (a maintainer)", "review_cadence_days": 365, "review_cadence": "At least yearly",
+      "documents": ["privacy/dpia-screening.md"],
+      "notes": "The four further DPIA risk factors are attributed to this source and are unverified."
+    },
+    {
+      "id": "authority-lists", "name": "National supervisory authority lists of processing that requires a DPIA (GDPR Article 35(4) and (5))", "type": "regulator guidance", "framework": null,
+      "edition_mapped": "Not mapped: each adopter checks their own authority",
+      "official_url": null,
+      "url_status": "Not tracked by the kit.",
+      "last_checked": null,
+      "checked_what": "Nothing. The kit does not hold any authority's list.",
+      "owner": "each adopter", "review_cadence_days": null, "review_cadence": "Not tracked by the kit",
+      "documents": ["privacy/dpia-screening.md"],
+      "notes": "The DPIA page tells users to record the authority, list and date checked."
+    },
+    {
+      "id": "aws-cli", "name": "AWS Command Line Interface", "type": "tool", "framework": null,
+      "edition_mapped": "Version not recorded; commands run on 2026-10-09",
+      "official_url": null,
+      "url_status": "Not fetched.",
+      "last_checked": "2026-10-09",
+      "checked_what": "16 read-only commands run against a real account; output shapes confirmed.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "Re-run yearly and when a command changes",
+      "documents": ["verify/aws.md", "verify/common.md"],
+      "notes": "The CLI version used was not recorded."
+    },
+    {
+      "id": "gcloud-cli", "name": "Google Cloud CLI", "type": "tool", "framework": null,
+      "edition_mapped": "Untested",
+      "official_url": null,
+      "url_status": "Not fetched.",
+      "last_checked": null,
+      "checked_what": "Nothing. Every command is marked UNTESTED.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "When someone tests the commands",
+      "documents": ["verify/gcp.md"],
+      "notes": "Contributions that test or correct these commands are welcome."
+    },
+    {
+      "id": "azure-cli", "name": "Microsoft Azure CLI", "type": "tool", "framework": null,
+      "edition_mapped": "Untested",
+      "official_url": null,
+      "url_status": "Not fetched.",
+      "last_checked": null,
+      "checked_what": "Nothing. Every command is marked UNTESTED.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "When someone tests the commands",
+      "documents": ["verify/azure.md"],
+      "notes": "Contributions that test or correct these commands are welcome."
+    },
+    {
+      "id": "github-rulesets-api", "name": "GitHub REST API for repository rulesets", "type": "tool", "framework": null,
+      "edition_mapped": "API in use on 2026-10-09",
+      "official_url": null,
+      "url_status": "Not fetched.",
+      "last_checked": "2026-10-09",
+      "checked_what": "The audit's read-only branch rule check was run against two repositories.",
+      "owner": "a maintainer", "review_cadence_days": 365, "review_cadence": "Yearly, and when the audit's check stops working",
+      "documents": ["audit/kit-audit.py", "audit/README.md", "verify/common.md"],
+      "notes": "The check reads GET /repos/{repo}/rulesets and GET /repos/{repo}/rulesets/{id}."
+    }
+  ]
+}
